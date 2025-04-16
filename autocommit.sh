@@ -1,10 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 timestamp=$(date -u +"%Y%m%dT%H%M%SZ")
-# echo "$timestamp # Debug
-
-git add .
-git commit -m "$timestamp"
-git push
-
-
+git -C "$SCRIPT_DIR" add .
+git -C "$SCRIPT_DIR" commit -m "$timestamp"
+git -C "$SCRIPT_DIR" push
